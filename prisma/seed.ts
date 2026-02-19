@@ -75,7 +75,7 @@ async function main() {
         password: customerPassword,
         role: "CUSTOMER",
         phone: "+62821-1111-2222",
-        address: "Jl. Sudirman No. 123, Jakarta",
+        address: "Keyongan, Nogosari, Boyolali",
       },
       {
         email: "clare@example.com",
@@ -83,7 +83,7 @@ async function main() {
         password: customerPassword,
         role: "CUSTOMER",
         phone: "+62822-3333-4444",
-        address: "Jl. Gatot Subroto No. 456, Bandung",
+        address: "Bendungan, Kedawung, Sragen",
       },
     ],
   });
