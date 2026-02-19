@@ -62,14 +62,14 @@ export default function CheckoutSuccessPage() {
       'bank_transfer:bca': {
         name: 'Bank Transfer BCA',
         accountNumber: '5480-123-456',
-        accountName: 'PT LuxeShop Indonesia',
+        accountName: 'PT Velstore',
         bank: 'BCA (Bank Central Asia)',
         instructions: [
           'Login ke BCA Mobile atau KlikBCA',
           'Pilih menu Transfer',
           'Masukkan nomor rekening: 5480-123-456',
           'Masukkan nominal: ' + formatPrice(order?.total || 0),
-          'a.n. PT LuxeShop Indonesia',
+          'a.n. PT Velstore',
           'Konfirmasi dan simpan bukti transfer',
           'Upload bukti transfer ke halaman order',
         ],
@@ -78,14 +78,14 @@ export default function CheckoutSuccessPage() {
       'bank_transfer:mandiri': {
         name: 'Bank Transfer Mandiri',
         accountNumber: '1370-123-456-789',
-        accountName: 'PT LuxeShop Indonesia',
+        accountName: 'PT Velstore',
         bank: 'Bank Mandiri',
         instructions: [
           'Login ke Livin by Mandiri',
           'Pilih Transfer > Antar Bank Mandiri',
           'Input nomor rekening: 1370-123-456-789',
           'Input nominal: ' + formatPrice(order?.total || 0),
-          'a.n. PT LuxeShop Indonesia',
+          'a.n. PT Velstore',
           'Konfirmasi transaksi',
           'Simpan bukti transfer',
         ],
@@ -94,7 +94,7 @@ export default function CheckoutSuccessPage() {
       'bank_transfer:bri': {
         name: 'Bank Transfer BRI',
         accountNumber: '0123-01-123456-50-9',
-        accountName: 'PT LuxeShop Indonesia',
+        accountName: 'PT Velstore',
         bank: 'BRI (Bank Rakyat Indonesia)',
         instructions: [
           'Login ke BRI Mobile',
@@ -108,7 +108,7 @@ export default function CheckoutSuccessPage() {
       'bank_transfer:bni': {
         name: 'Bank Transfer BNI',
         accountNumber: '0123456789',
-        accountName: 'PT LuxeShop Indonesia',
+        accountName: 'PT Velstore',
         bank: 'BNI (Bank Negara Indonesia)',
         instructions: [
           'Login ke BNI Mobile Banking',
@@ -126,7 +126,7 @@ export default function CheckoutSuccessPage() {
           'Pilih GoPay',
           'Scan QR Code yang dikirim ke email',
           'Atau transfer ke nomor: 0812-3456-7890',
-          'a.n. LuxeShop',
+          'a.n. Velstore',
           'Nominal: ' + formatPrice(order?.total || 0),
           'Konfirmasi pembayaran',
         ],
@@ -140,7 +140,7 @@ export default function CheckoutSuccessPage() {
           'Buka aplikasi OVO',
           'Pilih Transfer',
           'Transfer ke: 0812-3456-7890',
-          'a.n. LuxeShop',
+          'a.n. Velstore',
           'Nominal: ' + formatPrice(order?.total || 0),
           'Input PIN dan konfirmasi',
         ],
