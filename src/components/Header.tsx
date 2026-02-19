@@ -29,9 +29,21 @@ export default function Header() {
   const getTotalItems = useCartStore((state) => state.getTotalItems);
   const clearCart = useCartStore((state) => state.clearCart);
 
-  // Update cart count
+  // Update cart count on mount and when cart changes
   useEffect(() => {
-    setCartItemsCount(getTotalItems());
+    const updateCartCount = () => {
+      setCartItemsCount(getTotalItems());
+    };
+
+    // Initial update
+    updateCartCount();
+
+    // Listen for cart updates
+    window.addEventListener('cart-updated', updateCartCount);
+
+    return () => {
+      window.removeEventListener('cart-updated', updateCartCount);
+    };
   }, [getTotalItems]);
 
   // Clear cart when user changes (login/logout)
@@ -81,7 +93,7 @@ export default function Header() {
               <span className="text-white font-bold text-xl">V</span>
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-              VelStore
+              Velstore
             </span>
           </Link>
 
@@ -134,7 +146,7 @@ export default function Header() {
             >
               <ShoppingCart className="w-5 h-5 text-gray-600" />
               {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
                   {cartItemsCount}
                 </span>
               )}

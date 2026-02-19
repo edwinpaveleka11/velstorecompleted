@@ -38,10 +38,19 @@ export const useCartStore = create<CartStore>()(
         } else {
           set({ items: [...items, item] });
         }
+
+        // Trigger storage event for real-time updates
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new Event('cart-updated'));
+        }
       },
 
       removeItem: (id) => {
         set({ items: get().items.filter((i) => i.id !== id) });
+        
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new Event('cart-updated'));
+        }
       },
 
       updateQuantity: (id, quantity) => {
@@ -53,10 +62,18 @@ export const useCartStore = create<CartStore>()(
         set({
           items: get().items.map((i) => (i.id === id ? { ...i, quantity } : i)),
         });
+
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new Event('cart-updated'));
+        }
       },
 
       clearCart: () => {
         set({ items: [] });
+        
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new Event('cart-updated'));
+        }
       },
 
       getTotalItems: () => {

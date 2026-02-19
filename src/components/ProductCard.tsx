@@ -7,6 +7,7 @@ import { useCartStore } from '@/store/cart-store';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { useToast } from '@/components/ToastNotification';
 
 interface Product {
   id: string;
@@ -30,6 +31,7 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   const router = useRouter();
   const { data: session } = useSession();
+  const { showToast } = useToast();
   const addItem = useCartStore((state) => state.addItem);
   const [isAdding, setIsAdding] = useState(false);
   const [isAddingToWishlist, setIsAddingToWishlist] = useState(false);
@@ -54,6 +56,9 @@ export default function ProductCard({ product }: ProductCardProps) {
       slug: product.slug,
     });
 
+    // Show success toast
+    showToast('Added to cart!', 'success');
+
     setTimeout(() => setIsAdding(false), 1000);
   };
 
@@ -62,6 +67,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     e.stopPropagation();
 
     if (!session) {
+      showToast('Please login to add to wishlist', 'info');
       router.push('/login');
       return;
     }
@@ -74,16 +80,20 @@ export default function ProductCard({ product }: ProductCardProps) {
         body: JSON.stringify({ productId: product.id }),
       });
 
+      const data = await res.json();
+
       if (res.ok) {
-        // Show success feedback
-        alert('Added to wishlist!');
+        showToast('Added to wishlist!', 'success');
       } else {
-        const data = await res.json();
-        alert(data.error || 'Failed to add to wishlist');
+        if (data.error === 'Product already in wishlist') {
+          showToast('Already in your wishlist', 'info');
+        } else {
+          showToast(data.error || 'Failed to add to wishlist', 'error');
+        }
       }
     } catch (error) {
       console.error('Error adding to wishlist:', error);
-      alert('Failed to add to wishlist');
+      showToast('Something went wrong', 'error');
     } finally {
       setIsAddingToWishlist(false);
     }
