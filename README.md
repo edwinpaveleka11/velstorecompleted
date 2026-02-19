@@ -44,11 +44,11 @@ Sebelum memulai, pastikan kamu sudah install:
 
 ## 🚀 Cara Install & Setup
 
-### 1. Clone atau Extract Project
+### 1. Clone repository
 
-Jika sudah extract, masuk ke folder project:
 ```bash
-cd luxeshop-premium
+git clone https://github.com/edwinpaveleka11/velstorecompleted.git
+cd velstorecompleted
 ```
 
 ### 2. Install Dependencies
@@ -64,7 +64,7 @@ npm install
 1. Install PostgreSQL dari https://www.postgresql.org/download/
 2. Buat database baru:
 ```sql
-CREATE DATABASE luxeshop;
+CREATE DATABASE velstorecompleted;
 ```
 
 #### Opsi B: Menggunakan Railway (Free Cloud PostgreSQL)
@@ -94,7 +94,7 @@ Edit file `.env` dan isi dengan data berikut:
 # Database URL - Pilih salah satu format sesuai setup kamu:
 
 # Untuk PostgreSQL Lokal:
-DATABASE_URL="postgresql://postgres:password@localhost:5432/luxeshop?schema=public"
+DATABASE_URL="postgresql://postgres:password@localhost:5432/velstore?schema=public"
 
 # Untuk Railway:
 DATABASE_URL="postgresql://postgres:PASSWORD@HOST:PORT/railway?schema=public"
@@ -150,7 +150,7 @@ Setelah seeding, gunakan credentials berikut untuk login:
 
 ### Admin Access
 ```
-Email: admin@luxeshop.com
+Email: admin@example.com
 Password: admin123
 ```
 - Akses ke Admin Dashboard (/admin)
@@ -279,15 +279,7 @@ Vercel otomatis:
 - Setup serverless functions
 - Configure CDN
 
-### Database untuk Production
-
-Gunakan:
-- **Supabase** (Free tier: 500MB)
-- **Railway** (Free tier: 500MB)
-- **Neon** (Free tier: 1GB)
-- **PlanetScale** (Free tier: 5GB)
-
-## 📝 Customization Tips
+### 📝 Customization Tips
 
 ### Mengubah Warna Theme
 Edit `tailwind.config.js`:
@@ -356,4 +348,4 @@ MIT License - Free to use for personal and commercial projects
 
 **Dibuat dengan ❤️ menggunakan Next.js, TypeScript, dan Tailwind CSS**
 
-Selamat menggunakan LuxeShop Premium! 🎉
+Selamat menggunakan Velstore Completed! 🎉
