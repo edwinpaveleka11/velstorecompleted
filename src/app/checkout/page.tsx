@@ -143,7 +143,7 @@ export default function CheckoutPage() {
           name: 'BCA',
           fullName: 'Bank Central Asia',
           accountNumber: '5480-123-456',
-          accountName: 'PT Velstore',
+          accountName: 'PT LuxeShop Indonesia',
           instructions: [
             'Login ke BCA Mobile atau KlikBCA',
             'Pilih menu Transfer',
@@ -158,7 +158,7 @@ export default function CheckoutPage() {
           name: 'Mandiri',
           fullName: 'Bank Mandiri',
           accountNumber: '1370-123-456-789',
-          accountName: 'PT Velstore',
+          accountName: 'PT LuxeShop Indonesia',
           instructions: [
             'Login ke Livin by Mandiri',
             'Pilih Transfer > Antar Bank Mandiri',
@@ -173,7 +173,7 @@ export default function CheckoutPage() {
           name: 'BRI',
           fullName: 'Bank Rakyat Indonesia',
           accountNumber: '0123-01-123456-50-9',
-          accountName: 'PT Velstore',
+          accountName: 'PT LuxeShop Indonesia',
           instructions: [
             'Login ke BRI Mobile',
             'Pilih Transfer',
@@ -188,7 +188,7 @@ export default function CheckoutPage() {
           name: 'BNI',
           fullName: 'Bank Negara Indonesia',
           accountNumber: '0123456789',
-          accountName: 'PT Velstore',
+          accountName: 'PT LuxeShop Indonesia',
           instructions: [
             'Login ke BNI Mobile Banking',
             'Pilih Transfer',
