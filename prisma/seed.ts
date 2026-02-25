@@ -330,7 +330,7 @@ async function main() {
 
   // Create Sample Orders
   const user1 = await prisma.user.findUnique({
-    where: { email: "customer1@example.com" },
+    where: { email: "edwin@example.com" },
   });
   const product1 = await prisma.product.findUnique({
     where: { slug: "premium-wireless-headphones" },
@@ -386,7 +386,7 @@ async function main() {
   console.log("");
   console.log("📧 Login Credentials:");
   console.log("   Admin: admin@example.com / admin123");
-  console.log("   Customer: customer1@example.com / customer123");
+  console.log("   Customer: edwin@example.com / customer123");
 }
 
 main()
